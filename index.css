@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 60vw;
+  margin: auto;
+  padding-top: 20px;
+}
+
+.top {
+  overflow: hidden;
+}
+
+.left {
+  width: 28vw;
+  float: left;
+}
+
+.right {
+  width: 28vw;
+  float: right;
+}
+
+h1 {
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 20px;
+  font-size: 40px;
+}
+
+h3 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 24px;
+  line-height: 37px;
+}
+
+.subheading {
+  margin-bottom: 15px;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  line-height: 27px;
+  margin-bottom: 7px;
+}
+
+textarea {
+  margin-bottom: 8px;
+}
+
+input {
+  margin-top: 7px;
+  margin-bottom: 18px;
+}
+
+button {
+  background-color: black;
+  border: 0px;
+  padding: 10px 20px;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+#res {
+  width: 60vw;
+  margin: auto;
+  padding-top: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}
+
+.results {
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 15px;
+}
+
+.group {
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+}

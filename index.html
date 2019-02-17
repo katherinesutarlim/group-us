@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top">
+        <div class="left">
+          <h1>"Group Us!"</h1>
+          <h3 class="subheading">Gotta split your group into two for an escape room game? Splitting yourselves to fit a few twin rooms?</h3>
+          <p>Where some division is needed in life, we can split you into a few groups randomly and evenly - essentially, a random group generator. Just because.</p>
+          <p>No more "you absolutely rigged this" conversations with the guy in charge - we do this fair and square!</p<div class="right">
+        </div>
+        <div class="right">
+          <form class="" action="index.html" method="post">
+            <h3 class="steps">Enter your names below</h3>
+            <p>One name for each line, please</p>
+            <textarea id="people" name="name" rows="8" cols="50"></textarea>
+            <h3 class="steps">How many groups do you need?</h3>
+            <input id="ngroup" type="number" name="ngroup" value="1">
+            <br>
+            <button type="button" name="calc" onclick="calculate()">Group Us!</button>
+          </form>
+          </div>
+        </div>
+      </div>
+      <div id="res">
+    </div>
+    <script type="text/javascript">
+      function calculate() {
+        var group = [],
+            people = document.getElementById("people").value,
+            person = people.trim().split("\n"),
+            ngroup = document.getElementById("ngroup").value,
+            personperteam = Math.floor(person.length/ngroup),
+            nmaxteams = person.length % ngroup;
+        for (var i = 0; i < ngroup; i++) {
+          group[i] = [];
+        }
+        for (var i = 0; i < person.length; i++) {
+          while (true) {
+            g = Math.floor(Math.random() * ngroup);
+            if (group[g].length < personperteam) {
+              group[g].push(person[i]);
+              break;
+            } else if (group[g].length == personperteam && nmaxteams>0) {
+              group[g].push(person[i]);
+              nmaxteams -= 1;
+              break;
+            }
+          }
+        }
+        var res = "<h2 class = 'results'>Results!</h2>"
+        for (var i = 0; i < ngroup; i++) {
+          res += "<span class = 'group'> Group " + (i+1) + ": " + "</span>"
+          res += group[i].toString();
+        }
+        res += "</ul>"
+        document.getElementById('res').innerHTML = res;
+      }
+    </script>
+  </body>
+</html>
